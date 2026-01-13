@@ -48,3 +48,36 @@ const director1: Directors = {
   numberOfReports: 17,
 };
 console.log(director1);
+
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
+
+const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
+  return `${firstName.charAt(0)}. ${lastName}`;
+};
+
+console.log(printTeacher("John", "Doe"));
+
+interface StudentConstructor {
+    new(firstName: string, lastName: string): StudentClass;
+}
+
+interface StudentClass {
+    workOnHomework(): string;
+    displayName(): string;
+}
+
+class Student implements StudentClass {
+    constructor(public firstName: string, public lastName: string) { }
+    workOnHomework(): string {
+        return "Currently working";
+    }
+    displayName(): string {
+        return this.firstName;
+    }
+}
+
+const student1: StudentClass = new Student("Jane", "Smith");
+console.log(student1.displayName());
+console.log(student1.workOnHomework());
