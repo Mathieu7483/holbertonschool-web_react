@@ -59,6 +59,7 @@ const printTeacher: printTeacherFunction = (firstName: string, lastName: string)
 
 console.log(printTeacher("John", "Doe"));
 
+
 interface StudentConstructor {
     new(firstName: string, lastName: string): StudentClass;
 }
@@ -79,5 +80,6 @@ class Student implements StudentClass {
 }
 
 const student1: StudentClass = new Student("Jane", "Smith");
+
 console.log(student1.displayName());
 console.log(student1.workOnHomework());
